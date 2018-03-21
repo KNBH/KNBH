@@ -36,14 +36,15 @@ def init():
         names = finder.get(dorm.block(), number)
         if names is None:
             if dorm.empty_rooms():
-                table.add_row(Row(number)) # empty room
+                table.add_row(Row(number))  # empty room
             else:
                 continue
         else:
             for person in names:
-                table.add_row(Row(number,person))
+                table.add_row(Row(number, person))
 
     print(table)
+
 
 
 ###############################################################################

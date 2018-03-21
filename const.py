@@ -21,12 +21,15 @@ HELP = '\nOptions:\n\n' + \
        '\tEmpty Rooms:\n' + \
        '\t  --empty\n' + \
        '\t  -e\n'
+       '\tFilters:\n' + \
+       '\t--girls\n' + \
+       '\t--boys\n' + \
 
 
 ###############################################################################
 
 
-ROW_WIDTH = 40 # length of table row
+ROW_WIDTH = 40  # length of table row
 
 
 ###############################################################################

@@ -13,6 +13,8 @@ class Dormitory():
         self.__block = None
         self.__floor = None
         self.__ping = False
+        self.__boysOnly = False
+        self.__girlsOnly = False
         self.__room = None
         self.__empty_rooms = False
 
@@ -42,6 +44,16 @@ class Dormitory():
             elif re.match('^--empty$', arg) or re.match('^-e$', arg):
                 self.__empty_rooms = True
 
+            elif re.match('^--ping$', arg) or re.match('^-p$', arg):
+                self.__ping = True
+
+            # ENABLE FILTERS BY GENDER
+            elif re.match('^--girls$', arg) or re.match('^-G$', arg):
+                self.__girlsOnly = True
+
+            elif re.match('^--boys$', arg) or re.match('^-B$', arg):
+                self.__boysOnly = True
+
             # UNSUPPORTED ARGS
             else:
                 system.error('Wrong arguments!\n', 1)
@@ -49,7 +61,7 @@ class Dormitory():
         if self.__block.startswith(('b', 'B')):
             if self.__block.endswith(('4', '7')):
                 self.__max = 22
-            else: # 5 and 2
+            else:  # 5 and 2
                 self.__max = 39
         elif self.__block.startswith(('a', 'A')):
             self.__max = 41
@@ -62,14 +74,20 @@ class Dormitory():
     def block(self):
         return self.__block
 
-
     def floor(self):
         return self.__floor
-
 
     def empty_rooms(self):
         return self.__empty_rooms
 
+    def ping(self):
+        return self.__ping
+
+    def girlsOnly(self):
+        return self.__girlsOnly
+
+    def boysOnly(self):
+        return self.__boysOnly
 
     def rooms(self):
         if self.__room != None:

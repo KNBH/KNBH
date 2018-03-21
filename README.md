@@ -51,6 +51,11 @@ Define woman as a person with surname ending with `á` or firstname ending with 
             -e
             --empty
 
+        Girls only:
+            --girls
+
+        Boys only:
+            --boys
 
 ### Example
 
@@ -64,3 +69,4 @@ Define woman as a person with surname ending with `á` or firstname ending with 
 * Common usage:<br>
     - `./main.py -b=B05 -f=2`
     - `python3.6 main.py -b=B05 -f=2`
+
