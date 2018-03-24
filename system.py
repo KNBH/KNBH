@@ -1,11 +1,32 @@
+"sys wrapper"
+
+
 import sys
 
 
+argv = sys.argv
+
+
+###############################################################################
+
+
+def stdout(msg):
+	sys.stdout.write(msg)
+
+
+def stderr(msg):
+	sys.stderr.write(msg)
+
+
+def exit(num):
+	sys.exit(num)
+
+
 def signal_handler(signal, frame):
-    sys.stdout.write("\n")
-    sys.exit(0)
+    stdout("\n")
+    exit(0)
 
 
 def error(message, exitcode):
-    sys.stderr.write(message)
-    sys.exit(exitcode)
+    stderr(message)
+    exit(exitcode)

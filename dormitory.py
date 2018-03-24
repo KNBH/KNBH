@@ -1,12 +1,12 @@
-#! /usr/bin/env python3
-"Dormitory module"
+"dormitory module"
+
 
 import re
-
 import system
 
+
 class Dormitory():
-    "Dormitory module"
+
 
     def __init__(self, argv):
         self.__block = None
@@ -40,7 +40,6 @@ class Dormitory():
 
 
     def block(self):
-        "returns block variable"
         return self.__block
 
 

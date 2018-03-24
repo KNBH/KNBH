@@ -2,7 +2,6 @@
 
 
 import os
-import sys
 import signal
 import const
 import finder
@@ -14,7 +13,7 @@ from dormitory import *
 
 def print_help():
     "Print help message"
-    sys.stdout.write(const.HELP)
+    print(const.HELP)
 
 
 def print_header(color, block, floor):
@@ -69,17 +68,17 @@ def ping(host):
 
 def init():
     "init function"
-    if len(sys.argv) == 1:
+    if len(system.argv) == 1:
         system.error('Wrong arguments!\n', 1)
 
-    elif len(sys.argv) == 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
+    elif len(system.argv) == 2 and (system.argv[1] == '-h' or system.argv[1] == '--help'):
         print_help()
-        sys.exit(0)
+        system.exit(0)
 
-    elif len(sys.argv) > 6:
+    elif len(system.argv) > 6:
         system.error('Wrong arguments!\n', 1)
 
-    dorm = Dormitory(sys.argv)
+    dorm = Dormitory(system.argv)
 
     print_header(const.COLOR_BOLD_GREEN, dorm.block().upper(), dorm.floor())
 

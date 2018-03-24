@@ -1,3 +1,6 @@
+"project constants"
+
+
 MALE   = False
 FEMALE = True
 

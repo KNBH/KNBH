@@ -1,15 +1,16 @@
-"crawler through blocks"
+"person downloader"
+
 
 import re
-from http.client import responses
-import requests
 import const
-
 import person
+import requests
+from http.client import responses
+
 
 def get(block, room):
 
-    "Post request to kn.vutbr.cz and retrieve names with correct parameters"
+    "Post request to kn.vutbr.cz and retrieve person's data"
 
 
     URL = 'http://kn.vutbr.cz/search/index.html?str='+str(block)+'-'+str(room)
