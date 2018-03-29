@@ -68,10 +68,8 @@ def ping(host):
 
 def init():
     "init function"
-    if len(system.argv) == 1:
-        system.error('Wrong arguments!\n', 1)
-
-    elif len(system.argv) == 2 and (system.argv[1] == '-h' or system.argv[1] == '--help'):
+    # both first and second case
+    if (len(system.argv) == 1) or (len(system.argv) == 2 and (system.argv[1] == '-h' or system.argv[1] == '--help')):
         print_help()
         system.exit(0)
 
