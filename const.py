@@ -10,17 +10,17 @@ FEMALE = True
 
 HELP = '\nOptions:\n\n' + \
        '\tFloor:\n' + \
-       '\t--floor=NUMBER\n' + \
-       '\t-f=NUMBER\n\n' + \
+       '\t  --floor=NUMBER\n' + \
+       '\t  -f=NUMBER\n\n' + \
        '\tBlock:\n' + \
-       '\t--block=ID\n' \
-       '\t-b=ID\n\n' + \
-       '\tPing room:\n' + \
-       '\t--ping\n' + \
-       '\t-p\n\n' + \
-       '\tRoom:\n' + \
-       '\t--room\n' + \
-       '\t-r\n\n'
+       '\t  --block=ID\n' \
+       '\t  -b=ID\n\n' + \
+       '\tSpecific Room:\n' + \
+       '\t  --room=NUMBER\n' + \
+       '\t  -r=NUMBER\n\n' + \
+       '\tEmpty Rooms:\n' + \
+       '\t  --empty\n' + \
+       '\t  -e\n'
 
 
 ###############################################################################
