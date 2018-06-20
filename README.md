@@ -1,7 +1,5 @@
 # Dormitory Girl Hunter
 
-## © tammar96 & europ & xbolva00
-
 ## Description
 
 Define woman as a person with surname ending with `á`. The script searches persons on the specified floor and block defined by user via parameters. Women are displayed with red bold color.
@@ -12,8 +10,13 @@ Define woman as a person with surname ending with `á`. The script searches pers
 
     ```sh
     sudo add-apt-repository ppa:jonathonf/python-3.6
+
     sudo apt update
-    sudo apt install python3.6
+
+    sudo apt-get install python3.6
+    sudo apt-get install python3-pip
+
+    python3.6 -m pip install requests
     ```
 
 2. Run
@@ -36,14 +39,24 @@ Define woman as a person with surname ending with `á`. The script searches pers
             -b=BLOCK
             --block=BLOCK
 
-        Ping room:
-            -p
-            --ping
+        Specific Room:
+            -r=NUMBER
+            --room=NUMBER
 
-        Room:
-            -r
-            --room=ROOM
+        Empty Rooms:
+            -e
+            -empty
 
-        Girls only:
-            -g
-            --girls
+
+### Example
+
+
+* Help:<br>
+    - `./main.py -h`
+    - `python3.6 main.py -h`
+<br>
+
+
+* Common usage:<br>
+    - `./main.py -b=B05 -f=2`
+    - `python3.6 main.py -b=B05 -f=2`
