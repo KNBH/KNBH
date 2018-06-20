@@ -3,6 +3,7 @@
 
 import re
 import system
+import const
 
 
 class Dormitory():
@@ -13,30 +14,39 @@ class Dormitory():
         self.__floor = None
         self.__ping = False
         self.__room = None
+        self.__empty_rooms = False
 
         for arg in argv[1:]:
 
+            # BLOCK
             if re.match('^--block=.+$', arg):
                 self.__block = check_block(arg[8:])
             elif re.match('^-b=.+$', arg):
                 self.__block = check_block(arg[3:])
 
+            # FLOOR
             elif re.match('^--floor=.+$', arg):
                 self.__floor = check_number(arg[8:])
             elif re.match('^-f=.+$', arg):
                 self.__floor = check_number(arg[3:])
 
+            # ROOM
             elif re.match('^--room=.+$', arg):
                 self.__room = check_number(arg[7:])
+                self.__floor = room_to_floor(self.__room)
             elif re.match('^-r=.+$', arg):
                 self.__room = check_number(arg[3:])
                 self.__floor = room_to_floor(self.__room)
 
-            elif re.match('^--ping$', arg) or re.match('^-p$', arg):
-                self.__ping = True
+            # ENABLE EMPTY ROOM PRINTING
+            elif re.match('^--empty$', arg) or re.match('^-e$', arg):
+                self.__empty_rooms = True
 
+            # UNSUPPORTED ARGS
             else:
                 system.error('Wrong arguments!\n', 1)
+
+        self.__max = const.BLOCK_MAX # TODO: create constants for each block with max room count
 
 
     def block(self):
@@ -47,16 +57,17 @@ class Dormitory():
         return self.__floor
 
 
-    def ping(self):
-        return self.__ping
+    def empty_rooms(self):
+        return self.__empty_rooms
 
 
     def rooms(self):
         if self.__room != None:
             return range(self.__room, self.__room + 1)
-        a = self.__floor * 100
-        b = (a + 100) - 1
-        return range(a, b + 1)
+        else:
+            a = self.__floor * 100
+            b = (a + self.__max) - 1
+            return range(a, b + 1)
 
 
 ###############################################################################
