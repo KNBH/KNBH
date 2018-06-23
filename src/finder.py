@@ -2,9 +2,10 @@
 
 
 import re
-import const
-import person
 import requests
+
+from src import const
+from src import person
 from http.client import responses
 
 

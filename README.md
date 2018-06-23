@@ -22,7 +22,7 @@ Define woman as a person with surname ending with `á`. The script searches pers
 2. Run
 
     ```sh
-    python3.6 main.py [OPTIONS]
+    python3.6 run.py [OPTIONS]
     ```
 
     OPTIONS:
@@ -52,11 +52,11 @@ Define woman as a person with surname ending with `á`. The script searches pers
 
 
 * Help:<br>
-    - `./main.py -h`
-    - `python3.6 main.py -h`
+    - `./run.py -h`
+    - `python3.6 run.py -h`
 <br>
 
 
 * Common usage:<br>
-    - `./main.py -b=B05 -f=2`
-    - `python3.6 main.py -b=B05 -f=2`
+    - `./run.py -b=B05 -f=2`
+    - `python3.6 run.py -b=B05 -f=2`

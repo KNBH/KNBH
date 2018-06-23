@@ -1,7 +1,7 @@
 "table row"
 
 
-import const
+from src import const
 
 
 class Row():

@@ -1,7 +1,7 @@
 "person module"
 
 
-import const
+from src import const
 
 
 class Person():

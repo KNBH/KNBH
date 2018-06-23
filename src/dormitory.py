@@ -2,8 +2,9 @@
 
 
 import re
-import system
-import const
+
+from src import system
+from src import const
 
 
 class Dormitory():
