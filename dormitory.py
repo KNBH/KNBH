@@ -74,7 +74,7 @@ class Dormitory():
 
 
 def check_block(string):
-    if re.match('^(B0[2457]|A0[2-5]|C0[1-3])$', string, re.IGNORECASE):
+    if re.match('^(B0[2457]|A0[2-5]|C0[1-3]|D0[1-2])$', string, re.IGNORECASE):
         return string.lower()
     else:
         system.error(string+'\nWrong block!\n', 3)
