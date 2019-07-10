@@ -32,7 +32,12 @@ def get(block, room):
         p_name = str(match.group(1))
         p_surname = str(match.group(2))
         p_gender = const.MALE
-        if p_name.endswith('a') or p_surname.endswith(('á', 'Á')):
+        first_name = p_name
+        names = p_name.split()
+        if len(names) == 2:
+            # Ignore middle name for gender detection
+            first_name = names[0]
+        if first_name.endswith(('a', 'e')) or p_surname.endswith(('á', 'Á')):
             p_gender = const.FEMALE
 
         names.append(person.Person(p_name, p_surname, p_gender))
