@@ -2,7 +2,7 @@
 
 ## Description
 
-Define woman as a person with surname ending with `á`. The script searches persons on the specified floor and block defined by user via parameters. Women are displayed with red bold color.
+Define woman as a person with surname ending with `á` or firstname ending with `a` or `e`. The script searches persons on the specified floor and block defined by user via parameters. Women are displayed with red bold color.
 
 ## Usage
 
@@ -45,7 +45,7 @@ Define woman as a person with surname ending with `á`. The script searches pers
 
         Empty Rooms:
             -e
-            -empty
+            --empty
 
 
 ### Example
