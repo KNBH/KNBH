@@ -46,7 +46,17 @@ class Dormitory():
             else:
                 system.error('Wrong arguments!\n', 1)
 
-        self.__max = const.BLOCK_MAX # TODO: create constants for each block with max room count
+        if self.__block.startswith(('b', 'B')):
+            if self.__block.endswith(('4', '7')):
+                self.__max = 22
+            else: # 5 and 2
+                self.__max = 39
+        elif self.__block.startswith(('a', 'A')):
+            self.__max = 41
+        elif self.__block.startswith(('d', 'D')):
+            self.__max = 30
+        elif self.__block.startswith(('c', 'C')):
+            self.__max = 32
 
 
     def block(self):
@@ -66,8 +76,8 @@ class Dormitory():
             return range(self.__room, self.__room + 1)
         else:
             a = self.__floor * 100
-            b = (a + self.__max) - 1
-            return range(a, b + 1)
+            b = (a + self.__max + 1)
+            return range(a, b)
 
 
 ###############################################################################
