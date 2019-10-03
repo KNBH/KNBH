@@ -1,5 +1,9 @@
 # Dormitory Girl Hunter
 
+<p align="center">
+  <img src="/img/orly.png?raw=true">
+</p>
+
 ## Description
 
 Define woman as a person with surname ending with `á` or firstname ending with `a` or `e`. The script searches persons on the specified floor and block defined by user via parameters. Women are displayed with red bold color.
