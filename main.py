@@ -34,12 +34,12 @@ def init():
 
     for number in dorm.rooms():
         names = finder.get(dorm.block(), number)
-        if names is None:
-            if dorm.empty_rooms():
+        if dorm.empty_rooms():
+            if names is None:
                 table.add_row(Row(number)) # empty room
             else:
                 continue
-        else:
+        elif names is not None:
             for person in names:
                 table.add_row(Row(number,person))
 
