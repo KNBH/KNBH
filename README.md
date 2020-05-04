@@ -1,4 +1,4 @@
-# Dormitory Girl Hunter
+# KNBH
 
 <p align="center">
   <img src="/img/orly.png?raw=true">
