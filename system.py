@@ -11,15 +11,15 @@ argv = sys.argv
 
 
 def stdout(msg):
-	sys.stdout.write(msg)
+    sys.stdout.write(msg)
 
 
 def stderr(msg):
-	sys.stderr.write(msg)
+    sys.stderr.write(msg)
 
 
 def exit(num):
-	sys.exit(num)
+    sys.exit(num)
 
 
 def signal_handler(signal, frame):

@@ -1,0 +1,38 @@
+---
+dist: bionic # Ubuntu 18.04
+language: minimal
+
+matrix:
+  include:
+    - name: Linter-Python (pycodestyle)
+      language: python
+      python: 3.8
+      before_install:
+        - pip install --upgrade --force-reinstall pycodestyle
+      script:
+        - pycodestyle --config=./.conf/pycodestyle.cfg .
+
+    - name: Linter-Python (flake8)
+      language: python
+      python: 3.8
+      before_install:
+        - pip install --upgrade --force-reinstall flake8
+      script:
+        - flake8 --config=./.conf/flake8.cfg .
+
+    - name: Linter-Python (mypy)
+      language: python
+      python: 3.8
+      before_install:
+        - pip install --upgrade --force-reinstall mypy
+      script:
+        - mypy --ignore-missing-imports .
+
+    - name: Linter-Markdown (markdownlint)
+      language: ruby
+      rvm: 2.7.1
+      before_install:
+        - gem install mdl
+      script:
+        - mdl --style ./.conf/markdownlint.rb .
+

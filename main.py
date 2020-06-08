@@ -1,15 +1,14 @@
 #!/usr/bin/env python3.6
 
 
-import os
 import signal
 import const
 import finder
 import system
 
-
-from table import *
-from dormitory import *
+from row import Row
+from table import Table
+from dormitory import Dormitory
 
 
 def print_help():
@@ -20,7 +19,8 @@ def print_help():
 def init():
     "init function"
 
-    if (len(system.argv) == 1) or (len(system.argv) == 2 and (system.argv[1] == '-h' or system.argv[1] == '--help')):
+    if (len(system.argv) == 1) or (len(system.argv) == 2 and (
+            system.argv[1] == '-h' or system.argv[1] == '--help')):
         print_help()
         system.exit(0)
 
@@ -41,7 +41,7 @@ def init():
                 continue
         elif names is not None:
             for person in names:
-                table.add_row(Row(number,person))
+                table.add_row(Row(number, person))
 
     print(table)
 
@@ -52,4 +52,3 @@ def init():
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, system.signal_handler)
     init()
-

@@ -9,16 +9,20 @@ from http.client import responses
 
 
 def get(block, room):
-
     "Get request to kn.vutbr.cz and retrieve person's data"
 
-
-    URL = 'http://kn.vutbr.cz/search/index.html?str='+str(block)+'-'+str(room)
+    URL = 'http://kn.vutbr.cz/search/index.html?str=' + str(block) + '-' + str(room)
 
     get_request = requests.get(URL)
 
-    if get_request.status_code is not 200:
-        print("ERROR:\tStatus code of HTTP GET request is", get_request.status_code, "-", responses[get_request.status_code])
+    if get_request.status_code != 200:
+        print(
+            "ERROR:\tStatus code of HTTP GET request is",
+            get_request.status_code,
+            "-",
+            responses[get_request.status_code]
+        )
+
         print("\tURL:", URL)
         return None
     elif "Data nenalezena" in get_request.text:

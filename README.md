@@ -23,12 +23,13 @@ Define woman as a person with surname ending with `á` or firstname ending with 
     python3.6 -m pip install requests
     ```
 
-2. Run
+1. Run
 
     ```sh
     python3.6 main.py [OPTIONS]
     ```
 
+    ```txt
     OPTIONS:
 
         Help:
@@ -50,17 +51,14 @@ Define woman as a person with surname ending with `á` or firstname ending with 
         Empty Rooms:
             -e
             --empty
-
+    ```
 
 ### Example
 
+* Help:
+    * `./main.py -h`
+    * `python3.6 main.py -h`
 
-* Help:<br>
-    - `./main.py -h`
-    - `python3.6 main.py -h`
-<br>
-
-
-* Common usage:<br>
-    - `./main.py -b=B05 -f=2`
-    - `python3.6 main.py -b=B05 -f=2`
+* Common usage:
+    * `./main.py -b=B05 -f=2`
+    * `python3.6 main.py -b=B05 -f=2`
